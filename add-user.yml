@@ -1,0 +1,11 @@
+- hosts: lab
+  become: true
+  tasks:
+          - name: Add user
+            user:
+                name: vini
+                shell: /bin/zsh
+                comment: Vini Torino
+                groups: sudo,docker
+                append: yes
+                     
