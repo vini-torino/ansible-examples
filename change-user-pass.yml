@@ -5,5 +5,5 @@
          - name: Update user password
            user:
                    name: random
-                   password: '$6fafasfgfhfSBbBUkdF1bnxRdUy4GuJV7Yjz1'
+                   password: '$6$W3syX1OdhQRPA6P9$MGkTcavkFly4yzCsRppLgvvDf'
                    update_password: always 

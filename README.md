@@ -1,1 +1,1 @@
-Just some ansible examples
+A lot of useful examples of ansible utilization

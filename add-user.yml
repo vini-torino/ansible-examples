@@ -3,9 +3,9 @@
   tasks:
           - name: Add user
             user:
-                name: vini
+                name: random
                 shell: /bin/zsh
-                comment: Vini Torino
+                comment: random user
                 groups: sudo,docker
                 append: yes
                      

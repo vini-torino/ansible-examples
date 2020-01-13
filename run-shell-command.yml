@@ -1,0 +1,7 @@
+- hosts: lab
+  user: ubuntu
+  become: true
+  tasks:
+          - name: Run shell command
+            shell:
+                 cmd: sed -i 's,PasswordAuthentication yes,PasswordAuthentication no,' /etc/ssh/sshd_config && systemctl restart ssh 
