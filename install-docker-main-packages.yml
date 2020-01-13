@@ -1,0 +1,9 @@
+- hosts: lab
+  become: true
+  tasks:
+          - name: Install docker's main packages
+            apt:
+                pkg:
+                   - docker-ce
+                   - docker-ce-cli
+                   - containerd.io
