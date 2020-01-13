@@ -1,0 +1,9 @@
+- hosts: lab
+  become: true
+  tasks:
+          - name: Change file permission
+            file:
+                    path: /etc/sudoers.d/24-rule
+                    owner: root
+                    group: root
+                    mode: '0440'
