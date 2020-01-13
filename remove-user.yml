@@ -1,0 +1,10 @@
+- hosts: lab
+  user: vini
+  become: yes
+  tasks:
+      - name: Remove the user 'ubuntu'
+        user:
+              name: ubuntu
+              state: absent
+              force: yes
+              remove: yes
