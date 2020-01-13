@@ -1,0 +1,8 @@
+- hosts: lab
+  become: true
+  tasks:
+          - name: Copy sudoers file
+            copy:
+                    src: /home/vini/ansible-examples/24-rule
+                    dest: /etc/sudoers.d/24-rule
+                    validate: /usr/sbin/visudo -csf %s

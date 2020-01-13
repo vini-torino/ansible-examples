@@ -3,4 +3,4 @@
   tasks:
         - name: Install vim editor
           apt:
-                  name: vim
+                  name: zsh
