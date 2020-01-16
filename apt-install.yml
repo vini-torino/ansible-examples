@@ -1,6 +1,0 @@
-- hosts: lab
-  become: true
-  tasks:
-        - name: Install vim editor
-          apt:
-                  name: zsh

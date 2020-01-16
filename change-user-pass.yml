@@ -1,9 +1,0 @@
-- hosts: lab
-  user: ubuntu
-  become: yes
-  tasks:
-         - name: Update user password
-           user:
-                   name: random
-                   password: '$6$W3syX1OdhQRPA6P9$MGkTcavkFly4yzCsRppLgvvDf'
-                   update_password: always 

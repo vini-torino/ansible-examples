@@ -1,0 +1,88 @@
+---
+- name: Run apt update
+  apt:
+        update_cache: yes
+
+- name: Run dist-upgrade
+  apt: 
+        upgrade: yes
+
+- name: Install some dependencies
+  apt:
+        pkg:
+            - apt-transport-https
+            - ca-certificates
+            - curl 
+            - gnupg-agent
+            - software-properties-common
+            - vim
+
+- name: Add  docker repo 
+  apt_repository:
+          repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+          state: present
+          filename: docker
+
+- name: Refresh  repo's cache again  
+  apt:
+          update_cache: yes
+
+- name: Install docker's main packages 
+  apt:
+          pkg:
+            - docker-ce
+            - docker-cli
+            - containerd.io
+
+- name: Added new admin
+  user: 
+       name: delta0
+       shell: /bin/bash
+       home: /home/delta0
+       comment: Controler 
+       groups: sudo,docker
+       apend: yes
+
+ - name: Set delta0 password 
+   user:
+        name: delta0
+        state: present
+        password: '$6$RocjVasJ$k/8VZAkq.ziH1RZ8FWxGz2aWmFKlidAq5Jqx./EBTtP.HwPKwa.TzTc3.DDrNUCw3VwLS02YxthtT7b6XXq4Q0'
+
+- name: Copy sudors file 
+  copy:
+       src: ~/ansible-examples/24-rule
+       dest: /etc/sudoers.d/24-rule
+       owner: root
+       group: root 
+       mode: '0440'
+       validate: /usr/sbin/visudo -csf %s 
+
+- name: Copy pubkey 
+  copy:      
+        src: ~/.ssh/id_rsa.pub 
+        dest: /home/delta0/authorized_keys
+        owner: delta0
+        group: delta0
+        mode: '0640'
+--- 
+        
+        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

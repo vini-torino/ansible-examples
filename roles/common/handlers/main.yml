@@ -1,0 +1,9 @@
+---
+user: delta0
+become: yes 
+- name: Remove ubuntu user
+  user: 
+        name: ubuntu
+        state: absent
+        force: yes
+        remove: yes

@@ -1,6 +1,0 @@
-- hosts: lab
-  become: true
-  tasks:
-      - name: Run apt dist-upgrade
-        apt:
-            upgrade: dist
